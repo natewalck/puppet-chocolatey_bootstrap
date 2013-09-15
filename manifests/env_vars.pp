@@ -6,4 +6,10 @@ class chocolatey_bootstrap::env_vars {
     value     => 'C:\Chocolatey',
   }
 
+  windows_env {'PATH':
+    ensure    => present,
+    mergemode => append,
+    value     => '%systemdrive%\chocolatey\bin',
+  }
+
 }
